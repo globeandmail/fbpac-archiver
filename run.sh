@@ -3,7 +3,5 @@ psql "${DATABASE_URL}" -c "\COPY (SELECT * FROM ads WHERE (paid_for_by is not nu
 tar -cvzf "${FILENAME}.tar.gz" "${FILENAME}.csv"
 aws s3 cp --acl public-read "${FILENAME}.tar.gz" s3://${ARCHIVE_URL}/
 
-# TODO: archive last 3 copies, delete rest in bucket
-
 rm "${FILENAME}.csv"
 rm "${FILENAME}.tar.gz"
