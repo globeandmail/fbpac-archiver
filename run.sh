@@ -2,9 +2,9 @@
 
 FILENAME="fbpac-archive-$(date +%Y-%m-%d)"
 
-if [[ -z $PGUSER || -z $PGPASSWORD || -z $DATABASE_URL || -z $ARCHIVE_BUCKET ]]; then
+if [[ -z $DATABASE_URL || -z $ARCHIVE_BUCKET ]]; then
     printf "One or more required variables missing:\n"
-    printf "\tPGUSER\n\tPGPASSWORD\n\tDATABASE_URL\n\tARCHIVE_BUCKET\n"
+    printf "\tDATABASE_URL\n\tARCHIVE_BUCKET\n"
     exit 1
 fi
 
