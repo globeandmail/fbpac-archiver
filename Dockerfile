@@ -7,6 +7,5 @@ RUN yum -y install tar \
 WORKDIR /app
 
 ADD run.sh .
-
+RUN chmod +x run.sh
 CMD /app/run.sh
-
