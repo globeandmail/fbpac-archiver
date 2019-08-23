@@ -1,5 +1,12 @@
-ENV SHELL /bin/bash
+FROM amazonlinux:2
 
-WORKDIR /
+RUN yum -y install tar \
+    awscli \
+    postgresql
 
-CMD ./run.sh
+WORKDIR /app
+
+ADD run.sh .
+
+CMD /app/run.sh
+
